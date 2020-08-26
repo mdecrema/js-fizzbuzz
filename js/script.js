@@ -1,18 +1,15 @@
-var lista=document.getElementById('lista');
-var check= "";
-i = 0;
+var lista=document.getElementById('lista').innerHTML;
+var listaNumeri = [];
 
-do {
-  check +="<li>"+i+"</li>";
-  i++;
-} while (i<=100);
-  if (i % 3 == 0) {
-    lista.innerHTML="<li>Fizz</li>";
-  } else if (i % 5 == 0) {
-    lista.innerHTML="<li>Buzz</li>";
-  } else if (i % 3 == 0 && i % 5 == 0) {
-    lista.innerHTML="<li>FizzBuzz</li>";
-  } else {
-    lista.innerHTML="<li>"+i+"</li>";
-  }
+for (i=0 ; i<100; i++) {
+  lista += i;
+  if (lista % 3 == 0 && i % 5 == 0) {
+  document.getElementById('lista').innerHTML="<li>FizzBuzz</li>";
+} else if (lista % 3 == 0) {
+  document.getElementById('lista').innerHTML="<li>Fizz</li>";
+} else if (lista % 5 == 0) {
+  document.getElementById('lista').innerHTML="<li>Buzz</li>";
+} else {
+  document.getElementById('lista').innerHTML="<li>"+lista+"</li>";
+}
 };
